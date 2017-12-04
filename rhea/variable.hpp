@@ -251,14 +251,13 @@ namespace std
 {
 
 template <>
-struct hash<rhea::variable> : public unary_function<rhea::variable, size_t>
+struct hash<rhea::variable>
 {
     size_t operator()(const rhea::variable& v) const { return v.hash(); }
 };
 
 template <>
 struct equal_to<rhea::variable>
-    : public binary_function<rhea::variable, rhea::variable, bool>
 {
     bool operator()(const rhea::variable& a, const rhea::variable& b) const
     {

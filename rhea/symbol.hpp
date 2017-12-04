@@ -101,14 +101,13 @@ namespace std
 {
 
 template <>
-struct hash<rhea::symbol> : public unary_function<rhea::symbol, size_t>
+struct hash<rhea::symbol>
 {
     size_t operator()(const rhea::symbol& v) const { return v.id(); }
 };
 
 template <>
 struct equal_to<rhea::symbol>
-    : public binary_function<rhea::symbol, rhea::symbol, bool>
 {
     bool operator()(const rhea::symbol& a, const rhea::symbol& b) const
     {
