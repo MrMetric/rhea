@@ -23,7 +23,7 @@ public:
     {
     }
 
-    virtual ~action_variable() {}
+    virtual ~action_variable();
 
     virtual void set_value(double new_value)
     {

@@ -18,10 +18,10 @@ class variable;
 class error : public std::exception
 {
 public:
-    virtual ~error() throw() {}
+    virtual ~error();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw() { return "unspecified error"; }
+    virtual const char* what() const noexcept { return "unspecified error"; }
     // LCOV_EXCL_STOP
 };
 
@@ -36,10 +36,10 @@ public:
     {
     }
 
-    virtual ~internal_error() throw() {}
+    virtual ~internal_error();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw() { return msg.c_str(); }
+    virtual const char* what() const noexcept { return msg.c_str(); }
     // LCOV_EXCL_STOP
 };
 
@@ -47,10 +47,10 @@ public:
 class bad_weight : public error
 {
 public:
-    virtual ~bad_weight() throw() {}
+    virtual ~bad_weight();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "strength weight must be between 1 and 10000";
     }
@@ -62,10 +62,10 @@ public:
 class constraint_not_found : public error
 {
 public:
-    virtual ~constraint_not_found() throw() {}
+    virtual ~constraint_not_found();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "tried to remove a constraint that was never added";
     }
@@ -75,10 +75,10 @@ public:
 class duplicate_constraint : public error
 {
 public:
-    virtual ~duplicate_constraint() throw() {}
+    virtual ~duplicate_constraint();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "constraint was already added to the solver";
     }
@@ -88,10 +88,10 @@ public:
 class required_failure : public error
 {
 public:
-    virtual ~required_failure() throw() {}
+    virtual ~required_failure();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "required constraint is unsatisfiable";
     }
@@ -101,10 +101,10 @@ public:
 class duplicate_edit_variable : public error
 {
 public:
-    virtual ~duplicate_edit_variable() throw() {}
+    virtual ~duplicate_edit_variable();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "edit variable was already added to the solver";
     }
@@ -114,10 +114,10 @@ public:
 class unknown_edit_variable : public error
 {
 public:
-    virtual ~unknown_edit_variable() throw() {}
+    virtual ~unknown_edit_variable();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "edit variable was not added to the solver";
     }
@@ -127,10 +127,10 @@ public:
 class bad_required_strength : public error
 {
 public:
-    virtual ~bad_required_strength() throw() {}
+    virtual ~bad_required_strength();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "edit constraints cannot be required";
     }
@@ -141,10 +141,10 @@ public:
 class row_not_found : public error
 {
 public:
-    virtual ~row_not_found() throw() {}
+    virtual ~row_not_found();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw() { return "row does not exist"; }
+    virtual const char* what() const noexcept { return "row does not exist"; }
     // LCOV_EXCL_STOP
 };
 
@@ -152,10 +152,10 @@ public:
 class nonlinear_expression : public error
 {
 public:
-    virtual ~nonlinear_expression() throw() {}
+    virtual ~nonlinear_expression();
 
     // LCOV_EXCL_START
-    virtual const char* what() const throw()
+    virtual const char* what() const noexcept
     {
         return "application tried to construct a non-linear expression";
     }

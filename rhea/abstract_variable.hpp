@@ -17,7 +17,7 @@ namespace rhea
 class abstract_variable
 {
 public:
-    virtual ~abstract_variable() {}
+    virtual ~abstract_variable();
 
     /** Get the value of this variable. */
     virtual double value() const = 0;

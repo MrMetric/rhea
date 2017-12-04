@@ -19,7 +19,7 @@ public:
     {
     }
 
-    virtual ~float_variable() {}
+    virtual ~float_variable();
 
     virtual double value() const { return value_; }
 

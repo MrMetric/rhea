@@ -60,7 +60,7 @@ public:
     {
     }
 
-    virtual ~link_int() {}
+    virtual ~link_int();
 
     virtual void set_value(double new_value)
     {

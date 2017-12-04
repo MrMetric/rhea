@@ -6,6 +6,9 @@
 //---------------------------------------------------------------------------
 #pragma once
 
+#include <cassert>
+#include <string>
+
 namespace rhea
 {
 
@@ -31,7 +34,7 @@ public:
 
     comp_t type() const { return type_; }
 
-    relation reverse_inequality() const { return comp_t(-(int)type_); }
+    relation reverse_inequality() const { return comp_t(-static_cast<int>(type_)); }
 
     std::string to_string() const
     {
@@ -42,9 +45,8 @@ public:
             return "<=";
         case geq:
             return ">=";
-        default:
-            assert(false);
         }
+        assert(false);
     }
 
     bool operator==(comp_t c) const { return type_ == c; }
